@@ -1,0 +1,75 @@
+.home-container{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background-color: #1976d2;
+    gap: 3%;
+}
+
+.home-contain{
+    display: flex;
+    flex-direction: row;
+    margin-top: 1px;
+}
+
+.home-bread {
+    /* padding: 20px; */
+    background-color: #f5f5f5; 
+    border-radius: 12px; 
+    /* width: 90%; */
+    height: 90vh;
+    margin-left: 2%;
+    margin-right: 1%;
+}
+
+.bread-contain{
+    height: 8%;
+    display: flex;
+    align-items:flex-end;
+    background-color: white;
+    padding-left: 1.5%;
+}
+
+.bread-contain a{
+    color: #5078E1;
+    font-size: 14px;
+}
+
+.last-visit{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.four{
+    width: 33%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.breadcrumbs a {
+    color: #1976d2; 
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.breadcrumbs a:hover {
+    text-decoration: underline;
+}
+
+.breadcrumbs .MuiTypography-root {
+    font-weight: bold;
+    font-size: 14px;
+    color: #1976d2;
+}
+
+.btn-section{
+    display: flex;
+    justify-content: space-between;
+    /* margin-top: 20px; */
+    background-color: white;
+}

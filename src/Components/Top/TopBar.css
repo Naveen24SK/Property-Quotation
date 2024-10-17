@@ -1,0 +1,35 @@
+.top-div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content:space-between;
+    background-color: #FFFFFF;
+}
+
+.top-head{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin-left: 2%;
+}
+
+.top-heading{
+    font-size: 16px;
+    font-weight: bold;
+    color: #071741;
+    text-wrap: nowrap;
+}
+
+.back-arrow{
+    width: 10%;
+    border-radius: 50%;
+    background-color: #E4E8EE;
+}
+
+.select{
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 1%;
+}

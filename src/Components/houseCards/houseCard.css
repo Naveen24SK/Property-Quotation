@@ -1,0 +1,147 @@
+.house-contain{
+    width: 36%;
+}
+
+.unit-head{
+    display: flex;
+    font-size: 14px;
+    color: #4E5A6B;
+}
+
+.card-sec{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 70%;
+    gap: 3%;
+    overflow-y:scroll;
+    scrollbar-width: none;
+    justify-content: center;
+}
+
+.house-card {
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+    overflow: hidden;
+    width: 40%;
+    background-color: #fff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    /* transition: transform 0.3s ease; */
+    position: relative; 
+}
+
+/* .house-card:hover {
+    transform: translateY(-5px);
+} */
+
+.house-img-container {
+    position: relative;
+}
+
+.house-img {
+    width: 100%;
+    height: 110px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.discount-label {
+    position: absolute;
+    top: 85%;
+    right: -5%;
+    background-color: #FFF4EB;
+    color: #FF9340;
+    padding: 5px 10px;
+    font-size: 0.75rem;
+    border-radius: 4px 0px 0px 4px;
+    font-weight: bold;
+}
+
+.delete-icon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border: none;
+    cursor: pointer;
+    padding: 6px;
+    border-radius: 50%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* .house-details {
+    padding-top: 15px;
+} */
+
+.house-title {
+    font-size: 14px;
+    font-weight: bold;
+    /* margin: 2px ; */
+    color: #091B29;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* .house-price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+} */
+
+.discounted-price {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #FF9340;
+}
+
+.original-price {
+    font-size: 1rem;
+    color: #98A0AC;
+    text-decoration: line-through;
+}
+
+.house-location {
+    color: #98A0AC;
+    font-size: 12px;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.house-features {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    font-size: 14px;
+    color: #98A0AC;
+}
+
+.house-features span {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.customise-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.customise-link a {
+    color: #1a73e8;
+    text-decoration: none;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.customise-link a:hover {
+    text-decoration: underline;
+}

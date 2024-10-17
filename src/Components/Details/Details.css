@@ -1,0 +1,100 @@
+.details-container {
+    width: 30%;
+    height: 70vh;
+    /* max-width: 500px; */
+    background-color: #fff;
+    /* border: 1px solid #e0e0e0;
+    border-radius: 8px; */
+    padding: 20px;
+    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
+  }
+
+  .lead-head{
+    display: flex;
+    color: #4E5A6B;
+    font-size: 14px;
+  }
+
+  .quotation-head{
+    display: flex;
+    color: #4E5A6B;
+    font-size: 14px;
+  }
+  
+  /* h3, h4 {
+    margin-bottom: 16px;
+    color: #333;
+  } */
+  
+  .lead-info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    border: 2px solid #E4E8EE;
+    border-radius: 4px;
+  }
+  
+  .profile-pic {
+    width: 50px;
+    height: 50px;
+    border-radius: 10%;
+    margin-right: 16px;
+  }
+  
+  .lead-text {
+    /* flex-grow: 1; */
+    margin-left: 4%;
+  }
+  
+  .lead-name {
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-bottom: 4px;
+    display: flex;
+  }
+  
+  .prospect-badge {
+    background-color: #5078E11E;
+    color: #091B29;
+    font-size: 0.8rem;
+    padding: 4px 8px;
+    border-radius: 12px;
+    margin-left: 8px;
+  }
+  
+  .lead-contact {
+    font-size: 0.9rem;
+    color: #666;
+  }
+  
+  .quotation-section {
+    margin-top: 20px;
+  }
+  
+  .quotation-details {
+    display: flex;
+    gap: 14%;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+  
+  .detail-label {
+    font-size: 8px;
+    color: #98A0AC;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+  
+  .detail-value {
+    font-size: 12px;
+    font-weight: bold;
+    color: #091B29;
+  }
+  
+  .grace-period-note {
+    color: #999;
+    font-weight: normal;
+    font-size: 0.9rem;
+    margin-left: 4px;
+  }
+  
