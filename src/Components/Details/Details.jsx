@@ -1,5 +1,6 @@
 import React from 'react';
 import Profile from '../../assets/profile.jpg';
+import Prof from '../../assets/profile-pic.jpg';
 import CircleIcon from '@mui/icons-material/Circle';
 import Avatar from '@mui/material/Avatar';
 import Divider from '@mui/material/Divider';
@@ -10,13 +11,13 @@ const Details = () => {
     <div className="details-container">
       <h3 className='lead-head'>Lead Details</h3>
       <div className="lead-info">
-        <Avatar src={Profile} sx={{ width: 50, height: 50, backgroundColor: '#f5f5f5', marginLeft: '10px', borderRadius:'4px' }} variant="square" />
+        <Avatar src={Prof} sx={{ width: 50, height: 50, backgroundColor: '#f5f5f5', marginLeft: '10px', borderRadius:'4px' }} variant="square" />
         <div className="lead-text">
           <p className="lead-name">
             Tom Cruise <span className="prospect-badge">Prospect</span>
           </p>
           <p className="lead-contact">
-            +91 9090808012 &nbsp;<CircleIcon sx={{fontSize:'small'}} />&nbsp; Tomcruise2515@mail.com
+            +91 9090808012 &nbsp;<CircleIcon sx={{fontSize:'small', color:'##CED3DD'}} />&nbsp; Tomcruise2515@mail.com
           </p>
         </div>
       </div>

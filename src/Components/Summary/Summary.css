@@ -1,5 +1,6 @@
 .summary-container {
-    width: 28%;
+    width: 30%;
+    /* height: 70vh; */
     /* max-width: 400px; */
     background-color: #fff;
     /* border: 1px solid #e0e0e0; */
@@ -12,9 +13,10 @@
   .summary-container h2 {
     font-size: 1.2rem;
     font-weight: 500;
-    margin-bottom: 20px;
+    /* margin-bottom: 20px; */
     display: flex;
     color: #4E5A6B;
+    margin-top: 1%;
   }
 
   .summary-sec{
@@ -73,6 +75,6 @@
     font-weight: bold;
     font-size: 1rem;
     color: #333;
-    margin-top: 45%;
+    margin-top: 40%;
   }
   

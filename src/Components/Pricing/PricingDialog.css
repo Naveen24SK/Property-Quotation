@@ -1,14 +1,14 @@
 .pricing-item {
     border-radius: 12px;
     margin-bottom: 12px;
-    padding: 16px;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    /* height: 80px; Adjust this for height */
+    padding: 16px; /* Adjust this for padding */
 }
 
 .item-id {
-    background-color: #ff6b6b;
     color: white;
     font-weight: bold;
     border-radius: 50%;

@@ -1,6 +1,6 @@
 .details-container {
     width: 30%;
-    height: 70vh;
+    /* height: 70vh; */
     /* max-width: 500px; */
     background-color: #fff;
     /* border: 1px solid #e0e0e0;
@@ -13,6 +13,7 @@
     display: flex;
     color: #4E5A6B;
     font-size: 14px;
+    margin-top: -1%;
   }
 
   .quotation-head{
@@ -64,7 +65,10 @@
   
   .lead-contact {
     font-size: 0.9rem;
-    color: #666;
+    color: #CED3DD;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   
   .quotation-section {

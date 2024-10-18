@@ -22,10 +22,10 @@ const TopBar = () => {
       </div>
       {/* Select Dropdown inside TopBar */}
       <div className="select">
-        <FormControl sx={{ m: 1, minWidth: 180 }} size="small">
+        <FormControl sx={{ m: 1, minWidth: 190 }} size="small">
           <InputLabel id="demo-select-small-label">Select</InputLabel>
           <Select
-            labelId="demo-select-small-label"
+            labelId="select-small-label"
             id="demo-select-small"
             value={select}
             label="Select"
@@ -46,10 +46,10 @@ const TopBar = () => {
               },
             }}
           >
-            <MenuItem value="">
+            {/* <MenuItem value="">
               <em>None</em>
-            </MenuItem>
-            <MenuItem value={10}>Ten</MenuItem>
+            </MenuItem> */}
+            <MenuItem value={10}>Casagrand</MenuItem>
           </Select>
         </FormControl>
       </div>

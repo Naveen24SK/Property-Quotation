@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import DeleteIcon from '@mui/icons-material/Delete';
-import './houseCard.css';
+import DeleteOutlinedIcon from '@mui/icons-material/DeleteOutlined';import './houseCard.css';
 import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
 import BathtubOutlinedIcon from '@mui/icons-material/BathtubOutlined';
 import HotelOutlinedIcon from '@mui/icons-material/HotelOutlined';
@@ -56,7 +55,7 @@ const HouseCard = () => {
                             className="house-img"
                         />
                         <button className="delete-icon" onClick={(e) => { e.stopPropagation(); handleDelete(card.id); }}>
-                            <DeleteIcon />
+                            <DeleteOutlinedIcon />
                         </button>
                         {card.discountApplied && (
                             <div className="discount-label">
@@ -66,7 +65,7 @@ const HouseCard = () => {
                     </div>
                     <div className="house-details">
                         <div className="house-title">
-                            <h3>{card.title}</h3>
+                            <p>{card.title}</p>
                             {card.discountApplied ? (
                                 <>
                                     <h3 className="house-price discounted-price">${card.discountedPrice.toFixed(2)}</h3>
@@ -81,13 +80,13 @@ const HouseCard = () => {
                         </div>
                         <div className="house-features">
                             <span><HotelOutlinedIcon /> 2</span>
-                            <span><CircleIcon sx={{ fontSize: "small" }} /></span>
+                            <span><CircleIcon fontSize="inherit" sx={{ fontSize: "small" }} /></span>
                             <span><BathtubOutlinedIcon /> 2</span>
-                            <span><CircleIcon sx={{ fontSize: "small" }} /></span>
+                            <span><CircleIcon fontSize="inherit" sx={{ fontSize: "small" }} /></span>
                             <span><HomeOutlinedIcon /> 2BHK</span>
                         </div>
                         <div className="customise-link" onClick={(e) => e.stopPropagation()}>
-                            <Button variant="text" onClick={handleCustomizeClick}>
+                            <Button sx={{textTransform:"none"}} variant="text" onClick={handleCustomizeClick}>
                                 <AddRoundedIcon /> Customise
                             </Button>
                             {/* Popper */}

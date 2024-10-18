@@ -34,21 +34,35 @@ const Home = () => {
                         </Link>
 
                         {/* Custom breadcrumb with number "4" */}
-                        <Box display="flex" alignItems="center">
+                        <Box display="flex" alignItems="center"
+                        >
+                            <Box 
+                            sx={{
+                                border: '1px solid #CBD7F6',
+                                backgroundColor:'white',
+                                height:25,
+                                width:25,
+                                borderRadius: '50%',
+                                display:'flex',
+                                alignItems: 'center',
+                                justifyContent: 'center',
+                                marginRight: '8px',
+
+                            }}>
                             <Box
                                 sx={{
                                     backgroundColor: '#5078E1',
                                     color: 'white',
                                     borderRadius: '50%',
-                                    width: 24,
-                                    height: 24,
+                                    width: 18,
+                                    height: 18,
                                     display: 'flex',
                                     alignItems: 'center',
                                     justifyContent: 'center',
-                                    marginRight: '8px',
                                 }}
                             >
                                 4
+                            </Box>
                             </Box>
                             <Typography color="#5078E1">Preview and Create</Typography>
                         </Box>
@@ -62,10 +76,21 @@ const Home = () => {
                     <Summary />
                 </div>
                 <div className='btn-section'>
-                    <Button variant="outlined">Previous</Button>
-                    <div>
-                        <Button variant="outlined">Cancel</Button>
-                        <Button variant="contained">Create Quotation</Button>
+                    <div className='prev-btn'>
+                    <Button variant="outlined"
+                    sx={{borderColor: "#E4E8EE", color: "#091B29",fontWeight: "600",
+                        textAlign: "center",
+                        textTransform: "none", borderRadius: "8px"}}
+                    >Previous</Button>
+                    </div>
+                    <div className='btn-grp'>
+                        <Button variant="outlined"
+                        sx={{ color: "#091B29",fontWeight: "600",
+                            textAlign: "center", border: '1px solid #E4E8EE',
+                            textTransform: "none", borderRadius: "8px"}}>Cancel</Button>
+                        <Button variant="contained" sx={{backgroundColor:"#5078E1", color: "#FFFFFF",fontWeight: "600",
+                        textAlign: "center",
+                        textTransform: "none", borderRadius: "8px"}}>Create Quotation</Button>
                     </div>
                 </div>
             </div>
