@@ -1,0 +1,16 @@
+.secondary-container {
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    max-width: 500px;
+  }
+  
+  .title {
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  
+  .MuiToggleButtonGroup-root {
+    margin-bottom: 10px;
+  }
+  

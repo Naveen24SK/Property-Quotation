@@ -1,0 +1,138 @@
+.unit-pricing-details {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.pricing-title {
+    font-weight: bold;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.unit-pricing-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.bill-details {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.bill-name {
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.bill-amount {
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.discount-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.remove-icon {
+    color: #f44336; 
+    padding: 0;
+    margin-left: 10px;
+}
+
+.pricing-total {
+    margin-top: 20px;
+}
+
+.final-total {
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    padding: 10px 0;
+}
+
+.final-amount {
+    font-size: 18px;
+    color: #333;
+}
+
+.apply-discount-button,
+.update-save-button {
+    margin-top: 20px;
+    font-size: 14px;
+    padding: 10px;
+    background-color: #3f51b5;
+    color: white;
+}
+
+.dialog-content {
+    display: flex;
+    justify-content: space-between;
+}
+
+.unit-info {
+    width: 45%;
+}
+
+.img-contain {
+    display: flex;
+    justify-content: center;
+}
+
+.unit-title {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.unit-badge {
+    background-color: #e0e0e0;
+    padding: 5px;
+    border-radius: 4px;
+    margin-left: 10px;
+}
+
+.unit-details {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+}
+
+.overlay-container {
+    position: relative;
+}
+
+.overlay {
+    position: absolute;
+    border-radius: 6px;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.overlay-text {
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.view-link {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}

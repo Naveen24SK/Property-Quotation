@@ -31,18 +31,19 @@ const TopBar = () => {
             label="Select"
             onChange={handleChange}
             IconComponent={ExpandMoreIcon} 
+            inputProps={{ 'aria-label': 'Without label' }}
             sx={{
               borderRadius: '8px',
               backgroundColor: '#F5F7FA',
               borderColor: '#E4E8EE',
               '& .MuiOutlinedInput-notchedOutline': {
-                borderColor: '#E4E8EE', // border color
+                borderColor: '#E4E8EE', 
               },
               '&:hover .MuiOutlinedInput-notchedOutline': {
-                borderColor: '#E4E8EE', // hover effect with border color
+                borderColor: '#E4E8EE', 
               },
               '&.Mui-focused .MuiOutlinedInput-notchedOutline': {
-                borderColor: '#E4E8EE', // focus state with border color
+                borderColor: '#E4E8EE', 
               },
             }}
           >

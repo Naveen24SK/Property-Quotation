@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
     Dialog,
     DialogTitle,
@@ -9,58 +9,118 @@ import {
     ListItemText,
     Box,
     IconButton,
-    Tooltip,
-    Typography
+    Typography,
+    Divider,
 } from '@mui/material';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined';
 import CloseIcon from '@mui/icons-material/Close';
+import Primary from '../PricingLabel/Primary';
+import Secondary from '../PricingLabel/Secondary';
+import OneTimeCharge from '../PricingLabel/OneTime';
+import Refundable from '../PricingLabel/Refundable';
+import Inventory from '../PricingLabel/Inventory';
+import Parking from '../PricingLabel/Parking';
 import './pricingDialog.css';
 
 const PricingDialog = ({ open, onClose }) => {
+    const [selectedPricing, setSelectedPricing] = useState(null);
+
     const pricingItems = [
         { id: '01', label: 'Primary', bgColor: '#FEEAEA80', color: '#B3776D', tooltip: 'Base rent or monthly rental amount.' },
         { id: '02', label: 'Secondary', bgColor: '#EDE4FE80', color: '#896DB3', tooltip: 'Additional charges for services.' },
-        { id: '03', label: 'One Time Charges', bgColor: '#DBF0F180', color: '#6DAFB3', tooltip: 'One-time setup or initiation fees.' },
+        { id: '03', label: 'One Time Charges', bgColor: '#DBF0F180', color: '#6DAFB3', tooltip: 'One-time setup fees.' },
         { id: '04', label: 'Refundables', bgColor: '#E4EDFF80', color: '#6D80B3', tooltip: 'Deposit or other refundable amounts.' },
         { id: '05', label: 'Inventory Item', bgColor: '#FFFAD880', color: '#B3A16D', tooltip: 'Costs for inventory or assets.' },
-        { id: '06', label: 'Parking Slot', bgColor: '#FEEAEA80', color: '#B3776D', tooltip: 'Charges for parking slots.' }
+        { id: '06', label: 'Parking Slot', bgColor: '#FEEAEA80', color: '#B3776D', tooltip: 'Charges for parking slots.' },
     ];
 
+    // Function to handle the click event for each pricing item
+    const handlePricingSelect = (id) => {
+        switch (id) {
+            case '01':
+                setSelectedPricing('primary');
+                break;
+            case '02':
+                setSelectedPricing('secondary');
+                break;
+            case '03':
+                setSelectedPricing('oneTimeCharges');
+                break;
+            case '04':
+                setSelectedPricing('refundables');
+                break;
+            case '05':
+                setSelectedPricing('inventoryItem');
+                break;
+            case '06':
+                setSelectedPricing('parkingSlot');
+                break;
+            default:
+                setSelectedPricing(null);
+                break;
+        }
+    };
+
+    // Function to go back to the pricing list
+    const handleBack = () => {
+        setSelectedPricing(null);
+    };
+
     return (
-        <Dialog open={open} onClose={onClose} fullWidth maxWidth="xs">
-            <DialogTitle>
-                <Typography variant="h6">Pricing Table</Typography>
-                <IconButton
-                    edge="end"
-                    style={{ position: 'absolute', right: 15, top: 8 }}
-                    onClick={onClose}
-                >
-                    <CloseIcon />
-                </IconButton>
-            </DialogTitle>
-            <DialogContent>
-                <List>
-                    {pricingItems.map((item) => (
-                        <ListItem key={item.id} className="pricing-item" style={{ backgroundColor: item.bgColor, height: '80px', padding: '16px' }}>
-                            <ListItemIcon>
-                                <Box className="item-id" style={{ backgroundColor: item.color }}>
-                                    {item.id}
-                                </Box>
-                            </ListItemIcon>
-                            <ListItemText className='pricing-name' primary={item.label} style={{ color: item.color }} />
-                            <Tooltip title={item.tooltip} arrow>
-                                <IconButton edge="end">
-                                    <InfoOutlinedIcon style={{ color: item.color }} />
-                                </IconButton>
-                            </Tooltip>
-                            <IconButton edge="end">
-                                <ArrowForwardIosIcon style={{ color: item.color }} />
-                            </IconButton>
-                        </ListItem>
-                    ))}
-                </List>
-            </DialogContent>
+        <Dialog open={open} onClose={onClose}>
+            <Box width={500}>
+                <DialogTitle>
+                    <Box display="flex" justifyContent="space-between" alignItems="center">
+                        <Typography variant="h6">Pricing Table</Typography>
+                        <IconButton edge="end" onClick={onClose}>
+                            <CloseIcon />
+                        </IconButton>
+                    </Box>
+                </DialogTitle>
+                <Divider />
+
+                <DialogContent>
+                    {selectedPricing === 'primary' ? (
+                        <Primary onBack={handleBack} />
+                    ) : selectedPricing === 'secondary' ? (
+                        <Secondary onBack={handleBack} />
+                    ) : selectedPricing === 'oneTimeCharges' ? (
+                        <OneTimeCharge onBack={handleBack} />
+                    ) : selectedPricing === 'refundables' ? (
+                        <Refundable onBack={handleBack} />
+                    ) : selectedPricing === 'inventoryItem' ? (
+                        <Inventory onBack={handleBack} />
+                    ) : selectedPricing === 'parkingSlot' ? (
+                        <Parking onBack={handleBack} />
+                    ) : (
+                        <List>
+                            {pricingItems.map((item) => (
+                                <ListItem
+                                    key={item.id}
+                                    className="pricing-item"
+                                    style={{ backgroundColor: item.bgColor, height: '80px', padding: '16px' }}
+                                    onClick={() => handlePricingSelect(item.id)}
+                                >
+                                    <ListItemIcon>
+                                        <Box className="item-id" style={{ backgroundColor: item.color }}>
+                                            {item.id}
+                                        </Box>
+                                    </ListItemIcon>
+                                    <ListItemText
+                                        className="pricing-name"
+                                        primary={item.label}
+                                        style={{ color: item.color }}
+                                    />
+                                    <IconButton edge="end">
+                                        <ArrowForwardIosIcon style={{ color: item.color }} />
+                                    </IconButton>
+                                </ListItem>
+                            ))}
+                        </List>
+                    )}
+                </DialogContent>
+            </Box>
         </Dialog>
     );
 };

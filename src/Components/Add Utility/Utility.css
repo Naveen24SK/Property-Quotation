@@ -1,0 +1,28 @@
+.utility-content{
+    background-color: #FF6B6B;
+  }
+  
+  .utilityPrice {
+    font-weight: bold;
+    color: #FF6B6B;
+  }
+  
+  .subtitle1 {
+    padding-bottom: 16px;
+    color: #757575;
+  }
+  
+  .utility-listItem {
+    border: 1px solid grey;
+    border-radius: 6px;
+    margin-bottom: 2%;
+  }
+  
+  .saveButton {
+    background-color: #3f51b5;
+    color: white;
+  }
+  
+  .saveButton:hover {
+    background-color: #303f9f;
+  }

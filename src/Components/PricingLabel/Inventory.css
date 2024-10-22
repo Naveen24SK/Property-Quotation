@@ -1,0 +1,39 @@
+.inventory-container {
+    padding: 16px;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.toggle-group {
+    display: flex;
+    justify-content: space-between;
+}
+
+.small-select {
+    height: 40px;
+    margin-top: 8px;
+}
+
+.small-input {
+    width: calc(50% - 10px);
+    height: 40px;
+}
+
+.currency-symbol, .qty-label {
+    align-self: center;
+    margin-left: 10px;
+}
+
+.toggle-group .MuiToggleButtonGroup-grouped {
+    margin: 0 4px;
+    padding: 6px 16px;
+    font-size: 14px;
+}
+
+.MuiToggleButton-root {
+    font-size: 14px;
+}
+
+.MuiFormControl-root {
+    margin-top: 8px;
+}
