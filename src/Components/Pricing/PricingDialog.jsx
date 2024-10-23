@@ -21,6 +21,8 @@ import OneTimeCharge from '../PricingLabel/OneTime';
 import Refundable from '../PricingLabel/Refundable';
 import Inventory from '../PricingLabel/Inventory';
 import Parking from '../PricingLabel/Parking';
+import Tooltip, { tooltipClasses } from '@mui/material/Tooltip';
+import { styled } from '@mui/material/styles';
 import './pricingDialog.css';
 
 const PricingDialog = ({ open, onClose }) => {
@@ -35,7 +37,18 @@ const PricingDialog = ({ open, onClose }) => {
         { id: '06', label: 'Parking Slot', bgColor: '#FEEAEA80', color: '#B3776D', tooltip: 'Charges for parking slots.' },
     ];
 
-    // Function to handle the click event for each pricing item
+    const LightTooltip = styled(({ className, ...props }) => (
+        <Tooltip placement="top" {...props} classes={{ popper: className }} />
+    ))(({ theme }) => ({
+        [`& .${tooltipClasses.tooltip}`]: { 
+            backgroundColor: theme.palette.common.white,
+            color: 'rgba(0, 0, 0, 0.87)',
+            boxShadow: theme.shadows[1],
+            fontSize: 11,
+        },
+    }));
+    
+
     const handlePricingSelect = (id) => {
         switch (id) {
             case '01':
@@ -62,14 +75,13 @@ const PricingDialog = ({ open, onClose }) => {
         }
     };
 
-    // Function to go back to the pricing list
     const handleBack = () => {
         setSelectedPricing(null);
     };
 
     return (
         <Dialog open={open} onClose={onClose}>
-            <Box width={500}>
+            <Box width={550}>
                 <DialogTitle>
                     <Box display="flex" justifyContent="space-between" alignItems="center">
                         <Typography variant="h6">Pricing Table</Typography>
@@ -79,7 +91,7 @@ const PricingDialog = ({ open, onClose }) => {
                     </Box>
                 </DialogTitle>
                 <Divider />
-
+                <Box>
                 <DialogContent>
                     {selectedPricing === 'primary' ? (
                         <Primary onBack={handleBack} />
@@ -99,7 +111,7 @@ const PricingDialog = ({ open, onClose }) => {
                                 <ListItem
                                     key={item.id}
                                     className="pricing-item"
-                                    style={{ backgroundColor: item.bgColor, height: '80px', padding: '16px' }}
+                                    style={{ backgroundColor: item.bgColor, height: '70px', padding: '16px' }}
                                     onClick={() => handlePricingSelect(item.id)}
                                 >
                                     <ListItemIcon>
@@ -111,16 +123,22 @@ const PricingDialog = ({ open, onClose }) => {
                                         className="pricing-name"
                                         primary={item.label}
                                         style={{ color: item.color }}
-                                    />
+                                    />       
+                                     <LightTooltip title={item.tooltip}>
                                     <IconButton edge="end">
-                                        <ArrowForwardIosIcon style={{ color: item.color }} />
+                                        <InfoOutlinedIcon style={{ color: '#CED3DD' }} />
                                     </IconButton>
+                                </LightTooltip>
+                                <IconButton edge="end">
+                                    <ArrowForwardIosIcon style={{ color: item.color }} />
+                                </IconButton>
                                 </ListItem>
                             ))}
                         </List>
                     )}
                 </DialogContent>
-            </Box>
+                </Box>
+                </Box>
         </Dialog>
     );
 };

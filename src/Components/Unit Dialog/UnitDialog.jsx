@@ -40,25 +40,28 @@ export default function UnitDialog({ open, onClose }) {
                     <div className="unit-info">
                         {/* Image List */}
                         <div className='img-contain'>
-                        <ImageList
-                           
-                            variant="quilted"
-                            cols={4}
-                            rowHeight={80}
-                            gap={10}
-                        >
-                            {itemData.map((item) => (
-                                <ImageListItem key={item.img} cols={item.cols || 1} rows={item.rows || 1}
-                               >
-                                    <img
-                                        {...srcset(item.img, item.rows, item.cols)}
-                                        alt={item.title}
-                                        loading="lazy"
-                                        className='unit-img'
-                                    />
-                                </ImageListItem>
-                            ))}
-                        </ImageList>
+                        <ImageList variant="quilted" cols={4} rowHeight={80} gap={10}>
+                                {itemData.map((item, index) => (
+                                    <ImageListItem
+                                        key={item.img}
+                                        cols={item.cols || 1}
+                                        rows={item.rows || 1}
+                                        className={index === 4 ? 'overlay-container' : ''}
+                                    >
+                                        <img
+                                            {...srcset(item.img, item.rows, item.cols)}
+                                            alt={item.title}
+                                            loading="lazy"
+                                            className="unit-img"
+                                        />
+                                        {index === 4 && (
+                                            <div className="overlay">
+                                                <div className="overlay-text">+2</div>
+                                            </div>
+                                        )}
+                                    </ImageListItem>
+                                ))}
+                            </ImageList>
                         </div>
                         <div className="unit-title">Jumeirah Estate <span className="unit-badge">UNT-1234</span></div>
                         <div className="unit-subtitle">Rubix Apartment, K Tower, Floor 1</div>
@@ -85,7 +88,7 @@ export default function UnitDialog({ open, onClose }) {
                             <div className='pricing-names'>
                             {[...Array(5)].map((_, index) => (
                                 <>
-                                <div key={index} className="unit-pricing-item">
+                                <div key={index} className="unit-pricing-item1">
                                     <span>Bill Name Here</span>
                                     <span>$1,000</span>
                                 </div>

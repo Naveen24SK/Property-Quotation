@@ -1,10 +1,13 @@
 .utility-content{
-    background-color: #FF6B6B;
+    background-color: #DBF0F180;
+    padding: 4%;
+    border: 6px;
+    color: #6DAFB3;
   }
   
   .utilityPrice {
     font-weight: bold;
-    color: #FF6B6B;
+    color: #6DAFB3;
   }
   
   .subtitle1 {

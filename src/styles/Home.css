@@ -1,9 +1,16 @@
+@import url('https://fonts.googleapis.com/css?family=Nunito Sans');
+
+*{
+    font-family: 'Nunito', sans-serif;
+}
+
 .home-container{
     display: flex;
     flex-direction: column;
     height: 100vh;
     background-color: #F5F7FA;
     gap: 3%;
+    font-family: 'Nunito', sans-serif;
 }
 
 .home-contain{

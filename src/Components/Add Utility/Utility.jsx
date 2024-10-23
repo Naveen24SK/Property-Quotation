@@ -17,6 +17,7 @@ import {
 import CloseIcon from '@mui/icons-material/Close';
 import AutoAwesomeRoundedIcon from '@mui/icons-material/AutoAwesomeRounded';
 import Parking from '../../assets/park.jpg';
+import './Utility.css';
 
 const utilityList = [
   { name: 'Utility 1', price: '$20.00', date: 'Valid Feb 22 - 12 Feb 23', image: Parking },
@@ -46,7 +47,7 @@ export default function UtilityDialog({ open, handleClose }) {
       <Box className="utility-content" display="flex" justifyContent="space-between" alignItems="center">
         <Box display="flex" justifyContent="space-between" alignItems="center">
             <AutoAwesomeRoundedIcon />
-          <Typography variant="h6">05 Total Utility</Typography>
+          <Typography variant="h6" marginLeft={1}>05 Total Utility</Typography>
           </Box>
           <Typography>$200.00</Typography>
         </Box>

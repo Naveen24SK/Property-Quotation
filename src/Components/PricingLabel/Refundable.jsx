@@ -1,83 +1,219 @@
 import React, { useState } from 'react';
-import { Box, Button, Select, MenuItem, ToggleButtonGroup, ToggleButton, TextField, Typography, FormControl, InputLabel } from '@mui/material';
+import {
+  Box,
+  Button,
+  Select,
+  MenuItem,
+  TextField,
+  FormControl,
+  IconButton,
+  ToggleButtonGroup,
+  ToggleButton,
+  Typography
+} from '@mui/material';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined';
+import './secondary.css';
 
 const Refundable = ({ onBack }) => {
-    const [revenueType, setRevenueType] = useState('Lease');
-    const [pricingComponent, setPricingComponent] = useState('Pricing Component');
-    const [taxGroup, setTaxGroup] = useState('GST');
-    const [componentBase, setComponentBase] = useState('Amount');
+  const [revenueType, setRevenueType] = useState('Lease');
+  const [taxGroup, setTaxGroup] = useState('GST');
+  const [chargeable, setChargeable] = useState('Yes');
+  const [componentBasedOn, setComponentBasedOn] = useState('Amount');
+  const [uomValue, setUomValue] = useState(200);
 
-    return (
-        <Box p={2}>
-            <Typography variant="h6">Refundable Price Component</Typography>
+  const handleRevenueTypeChange = (event, newRevenueType) => {
+    if (newRevenueType !== null) setRevenueType(newRevenueType);
+  };
 
-            {/* Revenue Type Toggle Buttons */}
-            <Box mt={2} display="flex" justifyContent="space-between">
-                <ToggleButtonGroup
-                    value={revenueType}
-                    exclusive
-                    onChange={(e, value) => setRevenueType(value || revenueType)}
-                    fullWidth
-                >
-                    <ToggleButton value="Lease">Lease</ToggleButton>
-                    <ToggleButton value="Sales">Sales</ToggleButton>
-                    <ToggleButton value="Manage">Manage</ToggleButton>
-                    <ToggleButton value="Stay">Stay</ToggleButton>
-                </ToggleButtonGroup>
-            </Box>
+  const handleTaxGroupChange = (event) => {
+    setTaxGroup(event.target.value);
+  };
 
-            {/* Pricing Component Select */}
-            <Box mt={2}>
-                <FormControl fullWidth>
-                    <InputLabel>Pricing Component</InputLabel>
-                    <Select
-                        value={pricingComponent}
-                        onChange={(e) => setPricingComponent(e.target.value)}
-                    >
-                        <MenuItem value="Pricing Component">Pricing Component</MenuItem>
-                    </Select>
-                </FormControl>
-            </Box>
+  const handleChargeableChange = (event, newChargeable) => {
+    if (newChargeable !== null) setChargeable(newChargeable);
+  };
 
-            {/* Tax Group Select */}
-            <Box mt={2}>
-                <FormControl fullWidth>
-                    <InputLabel>Tax Group For Pricing Component</InputLabel>
-                    <Select
-                        value={taxGroup}
-                        onChange={(e) => setTaxGroup(e.target.value)}
-                    >
-                        <MenuItem value="GST">GST</MenuItem>
-                    </Select>
-                </FormControl>
-            </Box>
+  const handleComponentBasedOnChange = (event, newComponentBasedOn) => {
+    if (newComponentBasedOn !== null) setComponentBasedOn(newComponentBasedOn);
+  };
 
-            {/* Component Based On */}
-            <Box mt={2} display="flex" justifyContent="space-between">
-                <ToggleButtonGroup
-                    value={componentBase}
-                    exclusive
-                    onChange={(e, value) => setComponentBase(value || componentBase)}
-                    fullWidth
-                >
-                    <ToggleButton value="Amount">Amount</ToggleButton>
-                    <ToggleButton value="Rental Value">Rental Value</ToggleButton>
-                    <ToggleButton value="%">%</ToggleButton>
-                </ToggleButtonGroup>
-            </Box>
+  const handleUOMValueChange = (event) => {
+    setUomValue(event.target.value);
+  };
 
-            {/* Fixed Amount Value Input */}
-            <Box mt={2}>
-                <TextField fullWidth label="Fixed Amount Value" defaultValue="200" />
-            </Box>
+  return (
+    <Box
+      className="secondary-container"
+      sx={{
+        padding: '10px',
+        borderRadius: '8px',
+        display: 'flex',
+        flexDirection: 'column',
+        gap: 4,
+      }}
+    >
+      <Box
+        sx={{
+          backgroundColor: '#E4EDFF80',
+          color: '#6DAFB3',
+          borderRadius: '6px',
+          fontSize: '16px',
+          alignSelf: 'flex-start',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+          height: '55px',
+          width: '100%',
+        }}
+      >
+        <Typography className="title1" ml={2} color='#6D80B3'>Refundable Price Component</Typography>
+        <IconButton edge="end">
+             <InfoOutlinedIcon style={{ color: '#CED3DD',marginRight:'105%' }} />
+        </IconButton>
+      </Box>
 
-            {/* Create New Pricing Table Button */}
-            <Box display="flex" justifyContent="space-between">
-          <Button onClick={onBack} variant="outlined">Back</Button>
-          <Button variant="contained">Create Pricing Component</Button>
+        <Box>
+          <Typography className="title1">Revenue Type</Typography>
+          <ToggleButtonGroup
+            value={revenueType}
+            exclusive
+            onChange={handleRevenueTypeChange}
+            sx={{
+              display: 'flex',
+              gap: 1,
+              '& .MuiToggleButton-root': {
+                height: '40px',
+                width: '70px',
+                border: '2px solid #E4E8EE', 
+                backgroundColor: '#fff',
+                borderRadius: '4px',
+                textTransform: 'none',
+                fontSize: '14px', 
+                color: '#4E5A6B', 
+              },
+              '& .Mui-selected': {
+                backgroundColor: '#1976d2',
+                color: '#fff',
+              },
+            }}
+          >
+            <ToggleButton value="Lease">Lease</ToggleButton>
+            <ToggleButton value="Sales">Sales</ToggleButton>
+            <ToggleButton value="Manage">Manage</ToggleButton>
+            <ToggleButton value="Stay">Stay</ToggleButton>
+          </ToggleButtonGroup>
+        </Box>
+
+        <Box display="flex" flexDirection="row" justifyContent='space-between'>
+        <Box>
+          <Typography className="title1">Pricing Component</Typography>
+          <FormControl fullWidth>
+            <Select
+              value={taxGroup}
+              IconComponent={ExpandMoreIcon} 
+              onChange={handleTaxGroupChange}
+              sx={{ height: '40px', minWidth: '210px' }}
+            >
+              <MenuItem value="GST">Pricing Component</MenuItem>
+              <MenuItem value="VAT">Option 1</MenuItem>
+              <MenuItem value="Other">Option 2</MenuItem>
+            </Select>
+          </FormControl>
+        </Box>
+
+        <Box>
+          <Typography className="title1">Tax Group For Pricing Component</Typography>
+          <FormControl fullWidth>
+            <Select
+              value={taxGroup}
+              IconComponent={ExpandMoreIcon} 
+              onChange={handleTaxGroupChange}
+              sx={{ height: '40px', minWidth: '250px' }}
+            >
+              <MenuItem value="GST">GST</MenuItem>
+              <MenuItem value="VAT">VAT</MenuItem>
+              <MenuItem value="Other">Other</MenuItem>
+            </Select>
+          </FormControl>
         </Box>
         </Box>
-    );
+
+
+        <Box display='flex' flexDirection='row' justifyContent='space-between'>
+
+      <Box>
+        <Typography className="title1">Component Based On</Typography>
+        <ToggleButtonGroup
+          value={componentBasedOn}
+          exclusive
+          onChange={handleComponentBasedOnChange}
+          sx={{
+            display: 'flex',
+            gap: 1,
+            '& .MuiToggleButton-root': {
+              height: '40px',
+              width: '100px',
+              border: '2px solid #E4E8EE', 
+              backgroundColor: '#fff',
+              borderRadius: '4px',
+              textTransform: 'none',
+              fontSize: '14px', 
+              color: '#4E5A6B', 
+            },
+            '& .Mui-selected': {
+              backgroundColor: '#1976d2',
+              color: '#fff',
+            },
+          }}
+        >
+          <ToggleButton value="Amount">Amount</ToggleButton>
+          <ToggleButton value="Rental">Rental Value</ToggleButton>
+          <ToggleButton value="%">%</ToggleButton>
+        </ToggleButtonGroup>
+      </Box>
+      </Box>
+
+
+      <Box>
+        <Typography className="title1">Fixed Amount Value</Typography>
+        <TextField
+          type="number"
+          value={uomValue}
+          onChange={handleUOMValueChange}
+          fullWidth
+          sx={{ height: '40px', minWidth: '300px' }}
+          slotProps={{
+            input:{
+                endAdornment:(<div style={{color:'#98A0AC',fontSize:'14px',width:'20%',textAlign:'end'}}>$ / Monthly</div>),
+            }
+        }}
+        />
+      </Box>
+
+      <Box display="flex" justifyContent="space-between" mt={2}>
+        <Button onClick={onBack} variant="outlined" 
+        style={{
+            color: 'black',
+            fontSize: '14px',
+            textTransform:'none',
+            borderColor: '#E4E8EE',
+            borderRadius:'8px',
+            padding:'8px',
+          }}>Back</Button>
+        <Button variant="contained"
+        style={{
+            color: 'white',
+            backgroundColor:'#5078E1',
+            fontSize: '14px',
+            textTransform:'none',
+            borderColor: '#E4E8EE',
+            borderRadius:'8px',
+            padding:'8px',
+          }}>Create Pricing Component</Button>
+      </Box>
+    </Box>
+  );
 };
 
 export default Refundable;

@@ -1,26 +1,25 @@
-/* .dialogTitle {
-  padding: 16px;
-} */
-
 .amnities-content{
-  background-color: #FF6B6B;
+  background-color: #FEEAEA80;
+  border-radius: 6px;
+  color: #B3776D;
 }
 
 .amenitiesPrice {
   font-weight: bold;
-  color: #FF6B6B;
+  color: #B3776D;
 }
 
 .subtitle {
-  padding-bottom: 16px;
-  color: #757575;
+  padding-top: 10px;
+  font-size: 14px;
+  color: #98A0AC;
 }
 
-.listItem {
+/* .listItem {
   border: 1px solid grey;
   border-radius: 6px;
   margin-bottom: 2%;
-}
+} */
 
 .saveButton {
   background-color: #3f51b5;
@@ -31,11 +30,3 @@
   background-color: #303f9f;
 }
 
-/* Green switch when toggled on
-.MuiSwitch-colorSuccess.Mui-checked {
-  color: #4caf50;
-} */
-
-/* .MuiSwitch-colorSuccess.Mui-checked + .MuiSwitch-track {
-  background-color: #4caf50;
-} */

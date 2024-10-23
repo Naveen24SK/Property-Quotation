@@ -1,4 +1,6 @@
-.unit-pricing-details {
+.unit-price-details {
+    width: 50%;
+    height: 30%;
     padding: 20px;
     background-color: #f9f9f9;
     border-radius: 8px;
@@ -16,7 +18,16 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 0;
+    padding: 2% 0 1% 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.remove-pricing-item {
+    display: flex;
+    flex-direction: row;
+    /* justify-content: space-between; */
+    align-items: center;
+    padding: 2% 0 1% 0;
     border-bottom: 1px solid #ddd;
 }
 
@@ -44,14 +55,22 @@
     width: 100%;
 }
 
+
 .remove-icon {
     color: #f44336; 
-    padding: 0;
-    margin-left: 10px;
+    /* padding: 0; */
+    /* margin-left: 10px; */
 }
 
-.pricing-total {
+.pricing-total2 {
     margin-top: 20px;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    background-color: #E4E8EE;
+    color: #091B29;
+    border-radius: 6px;
+    padding: 3%;
 }
 
 .final-total {
@@ -87,6 +106,7 @@
 .img-contain {
     display: flex;
     justify-content: center;
+    margin-top: -4%;
 }
 
 .unit-title {
@@ -105,6 +125,10 @@
     display: flex;
     align-items: center;
     font-size: 14px;
+}
+
+.icons{
+    color: #CED3DD;
 }
 
 .overlay-container {

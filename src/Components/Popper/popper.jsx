@@ -15,9 +15,8 @@ const CustomPopper = ({ open, anchorEl, onModeChange }) => {
     const [amenitiesDialogOpen, setAmenitiesDialogOpen] = useState(false); 
     const [utilityDialogOpen, setUtilityDialogOpen] = useState(false);
     const [editPriceDialogOpen, setEditPriceDialogOpen] = useState(false);
-    const [editMode, setEditMode] = useState(''); // State to hold mode
+    const [editMode, setEditMode] = useState(''); 
 
-    // Handle Pricing Dialog
     const handlePricingClick = () => {
         setPricingDialogOpen(true);
     };
@@ -26,7 +25,6 @@ const CustomPopper = ({ open, anchorEl, onModeChange }) => {
         setPricingDialogOpen(false);
     };
 
-    // Handle Amenities Dialog
     const handleAmenitiesClick = () => {
         setAmenitiesDialogOpen(true);
     };
@@ -35,7 +33,6 @@ const CustomPopper = ({ open, anchorEl, onModeChange }) => {
         setAmenitiesDialogOpen(false);
     };
 
-    // Handle Utility Dialog
     const handleUtilityClick = () => {
         setUtilityDialogOpen(true);
     };
@@ -44,20 +41,18 @@ const CustomPopper = ({ open, anchorEl, onModeChange }) => {
         setUtilityDialogOpen(false);
     };
 
-        // Handle EditPrice Dialog for Discount or Remove
     const handleEditPriceClick = (mode) => {
-        setEditMode(mode); // Set the mode (AddDiscount or RemoveComponent)
-        setEditPriceDialogOpen(true); // Open EditPrice dialog
+        setEditMode(mode); 
+        setEditPriceDialogOpen(true); 
     };
     
     const handleEditPriceDialogClose = () => {
-        setEditPriceDialogOpen(false); // Close EditPrice dialog
+        setEditPriceDialogOpen(false); 
     };
 
-    // Mode Change Handler
-    const handleModeChange = (mode) => {
-        onModeChange(mode); // Notify parent to switch mode
-    };
+    // const handleModeChange = (mode) => {
+    //     onModeChange(mode); 
+    // };
 
     return (
         <>
